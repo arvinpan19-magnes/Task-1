@@ -1,15 +1,27 @@
 {
   "zona_horaria": "America/Santiago",
   "rangos": {
-    "dolar": [500, 2000],
-    "uf": [30000, 60000],
-    "cobre": [1, 10]
+    "dolar": [
+      500,
+      2000
+    ],
+    "uf": [
+      30000,
+      60000
+    ],
+    "cobre": [
+      1,
+      10
+    ]
   },
   "correo": {
-    "destinatarios": ["c.becar@udd.cl"],
+    "destinatarios": [
+      "c.becar@udd.cl"
+    ],
     "asunto_prefijo": "Respaldo diario Banco Central",
     "remitente_esperado": "arvinpan@gmail.com",
-    "destinatario_aviso_falla": null
+    "destinatario_aviso_falla": "c.becar@udd.cl",
+    "asunto_aviso_falla_prefijo": "[ALERTA] Respaldo diario Banco Central"
   },
   "fuentes": {
     "home": "https://www.bcentral.cl/inicio",

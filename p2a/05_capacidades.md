@@ -1,6 +1,6 @@
 # 05 · Capacidades (Habilidad)
 
-**Estado:** prototipo — los scripts están probados con fixtures y en vivo para la lectura; Gmail **no** está comprobado. (Por regla de madurez no pasa a `implementado` hasta que 02 esté `acordado`.)
+**Estado:** prototipo — los scripts están probados con fixtures y en vivo para la lectura; Gmail **no** está comprobado. (02 ya está `acordado`, pero 05 sigue en `prototipo` porque la capacidad crítica Gmail no está comprobada.)
 
 | Capacidad | Cómo se resuelve | Acceso técnico | Permiso entorno | Autorizada | Prueba | Resultado | Alternativa |
 |---|---|---|---|---|---|---|---|

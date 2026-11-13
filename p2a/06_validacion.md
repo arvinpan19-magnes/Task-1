@@ -20,7 +20,7 @@ Además, una **ejecución real** en vivo el 2026-11-13: lectura de ambas página
 
 **NO probado / pendiente:**
 - **Envío real por Gmail** y la verificación posterior de que el mensaje trae el adjunto (K7). El conector principal falló al conectar y el alternativo no tiene herramienta de envío.
-- **Correo de aviso de falla**: solo se probó que el código lo *prepara* (asunto/cuerpo); no tiene destinatario definido ni se envió.
+- **Correo de aviso de falla `[ALERTA]`**: se probó que el código lo prepara con asunto «[ALERTA] Respaldo diario Banco Central AAAA-MM-DD: se detuvo» y destinatario único `c.becar@udd.cl`; no se envió.
 - **Falla del conector de Gmail**: se *observó* (502 al iniciar) pero no hay prueba automatizada; el procedimiento es detenerse y avisar.
 - Lectura **en vivo** un sábado, domingo o feriado (solo simulada con fixtures): puede que la fuente muestre otra fecha o estructura.
 - Apertura del xlsx en Excel o LibreOffice (solo openpyxl).

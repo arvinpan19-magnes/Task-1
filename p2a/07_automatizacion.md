@@ -21,6 +21,6 @@
 ## Ficha del agente operacional
 Ver `README.md`.
 ## Supuestos y pendientes
-`[PENDIENTE]` Gmail con envío; destino del aviso de falla; aprobación de 🚪A, 🚪B, 🚪C, 🚪D.
+`[PENDIENTE]` Gmail con envío (el alumno reconectará el conector); aprobación de 🚪C y 🚪D. Aprobadas: 🚪A y 🚪B. Aviso de falla: a `c.becar@udd.cl`.
 ## Retornos / Traspaso
 Ninguno.

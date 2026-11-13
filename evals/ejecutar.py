@@ -73,6 +73,7 @@ def ejecutar_caso(c):
         if e.get("bytes_historial_iguales"): chk("bytes_historial_iguales", hist.read_bytes() == bytes_1, True)
         if "adjunto_verificado" in e: chk("adjunto_verificado", (est.get("adjunto") or {}).get("verificado"), True)
         if "aviso_falla_asunto" in e: chk("aviso_falla_asunto", (est.get("aviso_falla") or {}).get("asunto"), e["aviso_falla_asunto"])
+        if "aviso_falla_para" in e: chk("aviso_falla_para", (est.get("aviso_falla") or {}).get("para"), e["aviso_falla_para"])
         if "para" in e: chk("para", est["correo"]["para"], e["para"]); chk("cc", est["correo"]["cc"], e["cc"]); chk("bcc", est["correo"]["bcc"], e["bcc"])
         if "asunto" in e: chk("asunto", est["correo"]["asunto"], e["asunto"])
         if "max_bytes" in e:

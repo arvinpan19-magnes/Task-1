@@ -1,6 +1,6 @@
 # 01 · Contrato (Planificación)
 
-**Estado:** borrador — pendiente de 🚪 **Puerta A** (aprobación explícita del alumno). El alumno dictó estos términos en su encargo del 2026-11-13; falta su «sí» formal.
+**Estado:** acordado — 🚪 **Puerta A** aprobada por el alumno el 2026-11-13.
 
 ## Objetivo y audiencia
 Dejar cada día un respaldo verificable de dólar observado, UF y libra de cobre del Banco Central, y entregarlo por correo a `c.becar@udd.cl`.
@@ -35,7 +35,7 @@ El alumno (aprueba y responde). Destinatario del resultado: `c.becar@udd.cl`.
 - **Detención correcta:** dato faltante/fuera de rango/inconsistente, o Gmail no disponible → no se escribe ni se envía nada y se avisa.
 
 ## Supuestos y pendientes
-`[PENDIENTE]` ¿Aviso de falla por correo? y a quién (hoy solo chat). `[PENDIENTE]` Aprobación formal de la puerta A.
+Decidido 2026-11-13: ante una detención por falla se envía un correo `[ALERTA]` **solo a `c.becar@udd.cl`** (D19). Está preparado por el código; su envío real depende de Gmail (🚪C).
 ## Retornos
 Ninguno. ## Traspaso
 Rangos y destinatario en `agent/controles/config.json`.

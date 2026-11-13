@@ -1,6 +1,6 @@
 # Reporte de pruebas (unidad 06)
 
-Ejecutado: 2026-11-13T15:09:21+00:00  
+Ejecutado: 2026-11-13T15:14:36+00:00  
 Entorno: fixtures aislados en directorio temporal; sin red, sin Gmail, sin tocar `historial.xlsx` real.
 
 | Caso | Qué prueba | Estado | Evidencia |

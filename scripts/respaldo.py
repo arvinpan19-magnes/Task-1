@@ -128,10 +128,12 @@ def preparar(args):
 
 
 def aviso_falla(hoy, motivo):
-    return {"asunto": f"FALLA respaldo diario Banco Central {hoy}",
+    cfg = bcch.CONFIG["correo"]
+    para = cfg["destinatario_aviso_falla"]
+    return {"asunto": f"{cfg['asunto_aviso_falla_prefijo']} {hoy}: se detuvo",
             "cuerpo": f"El respaldo diario del {hoy} se detuvo y no se registró ningún dato.\nMotivo: {motivo}\n"
-                      "No se inventó ningún valor.",
-            "para": bcch.CONFIG["correo"]["destinatario_aviso_falla"]}  # None = solo aviso en el chat
+                      "No se inventó ni se corrigió ningún valor.",
+            "para": [para] if para else [], "cc": [], "bcc": []}
 
 
 def marcar(args):

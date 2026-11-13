@@ -18,7 +18,7 @@ Lee el home y la página de indicadores diarios del Banco Central (con navegador
 `historial.xlsx` SIN duplicar, prepara y verifica el adjunto (`cmp` + apertura con openpyxl) y escribe `salidas/estado.json`.
 
 - **Código de salida 2 / `estado: DETENIDO`**: DETENTE. Informa al alumno el `motivo` en el chat. No envíes nada, no hagas commit, no
-  inventes ni "corrijas" valores. (`aviso_falla` trae el texto del aviso; su destinatario aún no está definido: solo chat.)
+  inventes ni "corrijas" valores. (`aviso_falla` trae asunto, cuerpo y destinatario del correo `[ALERTA]`: único destinatario `c.becar@udd.cl`. Envíalo solo si Gmail está disponible con envío y la puerta C está aprobada; si no, solo avisa en el chat.)
 - **Código 0 / `estado: LISTO`**: continúa.
 
 ## 2. Decidir si corresponde enviar (lee `salidas/estado.json`)

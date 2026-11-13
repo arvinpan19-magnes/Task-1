@@ -1,6 +1,6 @@
 # 02 · Método
 
-**Estado:** borrador — pendiente de 🚪 **Puerta B** (método y tecnología). Tecnología propuesta: **flujo programado** (pasos fijos en código; el modelo solo redacta), porque el orden de los pasos es conocido (master prompt §10).
+**Estado:** acordado — 🚪 **Puerta B** aprobada el 2026-11-13. Tecnología: **flujo programado** (pasos fijos en código; el modelo solo redacta), porque el orden de los pasos es conocido (master prompt §10).
 
 ## Ruta normal
 | # | Paso | Ejecutor | Entrada → Salida | Verificación |
@@ -24,6 +24,7 @@ R1 rangos · R2 nunca inventar · R3 una fila por fecha · R4 destinatario únic
 | Sitio caído tras 3 reintentos | Detener | alumno |
 | Fila de hoy ya existe con otros valores | No modificar; avisar | alumno |
 | Gmail no disponible o sin envío con adjunto | **Detener**; no usar otra vía | alumno |
+| Cualquier detención por falla | Preparar correo `[ALERTA]` a `c.becar@udd.cl` (único destinatario); enviarlo solo si Gmail funciona | c.becar@udd.cl + alumno en el chat |
 | Adjunto no verificado | Detener | alumno |
 | El mensaje enviado no trae el adjunto | Avisar; no reenviar solo | alumno |
 
@@ -31,6 +32,6 @@ R1 rangos · R2 nunca inventar · R3 una fila por fecha · R4 destinatario únic
 Que la página cambie el orden o etiqueta de indicadores (mitigado: se verifican etiquetas) · que la fuente muestre una fecha vieja (mitigado: nota «sin cambio»).
 
 ## Supuestos y pendientes
-`[SUPUESTO]` «sin cambio» = la fecha de referencia de la fuente es anterior a hoy. Un día hábil muy temprano (antes de la publicación del dólar) se vería igual: `[PENDIENTE]` confirmar la hora de publicación.
+Confirmado por el alumno (2026-11-13): «sin cambio» = la fecha de referencia de la fuente es anterior a hoy. Un día hábil muy temprano (antes de la publicación del dólar) se vería igual: `[PENDIENTE]` confirmar la hora de publicación.
 ## Retornos / Traspaso
 Retorno 1 (2026-11-13): se agregó la columna `nota` al Excel (necesaria para «sin cambio»). Traspaso: todo el método está en `scripts/` y `.claude/commands/respaldo-diario.md`.

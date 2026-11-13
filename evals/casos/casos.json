@@ -24,7 +24,7 @@
      "esperado": {"rc": 2, "estado": "DETENIDO", "historial_existe": false}},
     {"id": "C4_falla_lectura_y_aviso", "desc": "La lectura falla (sitio caído): se detiene y se prepara aviso de falla; no se escribe nada",
      "hoy": "2026-11-13", "mut": {"ok": false, "error": "timeout de red"},
-     "esperado": {"rc": 2, "estado": "DETENIDO", "historial_existe": false, "aviso_falla_asunto": "FALLA respaldo diario Banco Central 2026-11-13"}},
+     "esperado": {"rc": 2, "estado": "DETENIDO", "historial_existe": false, "aviso_falla_asunto": "[ALERTA] Respaldo diario Banco Central 2026-11-13: se detuvo", "aviso_falla_para": ["c.becar@udd.cl"]}},
     {"id": "C5a_fin_de_semana", "desc": "Sábado: la fuente aún muestra el viernes -> fila 'sin cambio' y se envía igual",
      "hoy": "2026-11-14", "esperado": {"rc": 0, "filas": 1, "fila_nueva": true, "nota_empieza": "sin cambio", "accion_correo": "enviar"}},
     {"id": "C5b_feriado", "desc": "Feriado (8-dic-2026): la fuente muestra el 7-dic -> 'sin cambio'",
