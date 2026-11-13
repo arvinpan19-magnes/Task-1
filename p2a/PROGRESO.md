@@ -9,9 +9,9 @@ Unidad              Estado        Vacíos clave
 02 Método           acordado      hora de publicación del dólar sin confirmar  (🚪B aprobada)
 03 Contexto         implementado  sin vigilancia automática de cambios en el sitio del BCCh
 04 Memoria          implementado  la rutina en la nube no se probó con un clon limpio
-05 Habilidad        prototipo     Gmail: sin herramienta de envío con adjunto (conector principal caído)
+05 Habilidad        prototipo     Gmail no autenticado (error de registro de cliente) y sin herramienta de envío
 06 Ejecución        prototipo     17/17 en fixtures (x3) + 1 ejecución real contrastada; envío real y feriado en vivo sin probar
-07 Automatización   borrador      manual con /respaldo-diario; rutina 09:00 pendiente (🚪D)
+07 Automatización   borrador      manual con /respaldo-diario; rutina lunes 09:00 pendiente (🚪D)
 Próximo ciclo propuesto: reconectar Gmail con envío (🚪C), probar el envío real y un fin de semana en vivo
 ```
 

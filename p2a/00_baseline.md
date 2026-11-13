@@ -10,7 +10,7 @@
 5. Enviar un correo con los 3 valores, la fuente y la planilla adjunta.
 
 - **Quién recibe:** `c.becar@udd.cl` (solo esa persona). **Quién responde por el resultado:** el alumno.
-- **Frecuencia:** diaria, 09:00 hora de Chile. **Inicio hoy:** manual, comando `/respaldo-diario`.
+- **Frecuencia:** el encargo original decía diaria 09:00; el 2026-11-13 el alumno fijó **los lunes a las 09:00** hora de Chile. **Inicio hoy:** manual, comando `/respaldo-diario`.
 - **Fin:** correo enviado y verificado, fila registrada, commit+push si la fila es nueva.
 
 ## Hechos observados el 2026-11-13 (evidencia real)

@@ -1,6 +1,6 @@
 # 07 · Automatización
 
-**Estado:** borrador. Hoy el disparador es **manual**: el comando `/respaldo-diario` en este chat (`.claude/commands/respaldo-diario.md`). La rutina automática queda como paso posterior (🚪D).
+**Estado:** borrador. Frecuencia decidida: lunes 09:00 (Chile). Hoy el disparador es **manual**: el comando `/respaldo-diario` en este chat (`.claude/commands/respaldo-diario.md`). La rutina automática queda como paso posterior (🚪D).
 
 ## Cómo se ejecuta hoy (manual)
 1. Escribir `/respaldo-diario`.
@@ -11,7 +11,7 @@
 5. Si `commit_y_push` → `git add historial.xlsx memoria` + commit + push. Si no hubo fila nueva, no hay commit.
 
 ## Diseño de la rutina automática (pendiente, 🚪D)
-- **Gatillo:** diario 09:00 America/Santiago (en UTC varía con el horario de verano de Chile: configurar con zona horaria, no con hora UTC fija).
+- **Gatillo (decidido 2026-11-13): los lunes a las 09:00 America/Santiago** (cron `CRON_TZ=America/Santiago 0 9 * * 1`; configurar con zona horaria, no con hora UTC fija, porque Chile cambia de horario). Un lunes a las 09:00 la fuente puede seguir mostrando el viernes: en ese caso la fila queda «sin cambio (último valor publicado: …)» y el correo se envía igual.
 - **Entorno:** rutina en claude.ai con este repo y el conector de Gmail (con herramienta de envío y adjuntos), más acceso de red a `www.bcentral.cl` y `si3.bcentral.cl`.
 - **Duplicados:** idempotente por fecha (`historial.xlsx`) y por `memoria/envios.json`.
 - **Reintentos:** hasta 3 en la lectura (ya implementado); en el envío, ninguno automático (se avisa).
