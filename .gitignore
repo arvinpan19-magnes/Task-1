@@ -1,0 +1,5 @@
+salidas/adjunto/
+salidas/estado.json
+*.tmp
+__pycache__/
+node_modules/
