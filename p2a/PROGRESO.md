@@ -10,7 +10,7 @@ Unidad              Estado        Vacíos clave
 03 Contexto         borrador      sin vigilancia de cambios en el sitio del BCCh
 04 Memoria          borrador      la rutina en la nube no se probó con clon limpio
 05 Habilidad        prototipo     Gmail: sin herramienta de envío con adjunto (conector principal caído)
-06 Ejecución        prototipo     16/16 en fixtures + 1 ejecución real; envío real y feriado en vivo sin probar
+06 Ejecución        prototipo     17/17 en fixtures (x3) + 1 ejecución real contrastada con la página; envío real y feriado en vivo sin probar
 07 Automatización   borrador      manual con /respaldo-diario; rutina 09:00 pendiente (🚪D)
 Próximo ciclo propuesto: resolver el envío por Gmail (🚪C) y probar un fin de semana en vivo
 ```

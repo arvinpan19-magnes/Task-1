@@ -16,6 +16,7 @@ sys.path.insert(0, str(RAIZ / "scripts"))
 import exportar_xlsx  # noqa: E402
 
 BASE = json.loads((RAIZ / "evals/casos/lectura_real_2026-11-13.json").read_text(encoding="utf-8"))
+REPETICIONES = 3  # los casos críticos se repiten 3 veces (instrucciones del ramo)
 CASOS = json.loads((RAIZ / "evals/casos/casos.json").read_text(encoding="utf-8"))["casos"]
 
 
@@ -87,19 +88,43 @@ def ejecutar_caso(c):
     return fallas, "; ".join(evidencia)
 
 
+def caso_url_invalida():
+    """Usa el lector REAL (node) con URLs inexistentes: debe fallar con ok=false y el intérprete debe detenerse."""
+    fallas = []
+    r = subprocess.run(["node", str(RAIZ / "scripts/leer_bcch.js"), "--home", "http://127.0.0.1:59999/", "--diarios", "http://127.0.0.1:59999/"],
+                       capture_output=True, text=True, timeout=120)
+    crudo = json.loads(r.stdout)
+    if crudo.get("ok") is not False: fallas.append("el lector debía devolver ok=false")
+    if r.returncode != 3: fallas.append(f"rc del lector esperado 3, real {r.returncode}")
+    import bcch
+    try:
+        bcch.interpretar(crudo); fallas.append("interpretar() debía lanzar ErrorDatos")
+    except bcch.ErrorDatos:
+        pass
+    return fallas, f"lector rc={r.returncode} ok={crudo.get('ok')} error={" ".join(str(crudo.get("error")).split())[:70]}"
+
+
 def main():
     filas_md, malos = [], 0
     for c in CASOS:
-        fallas, ev = ejecutar_caso(c)
+        fallas, ev = [], ""
+        for rep in range(REPETICIONES):
+            f, e = ejecutar_caso(c)
+            fallas += [f"[rep {rep + 1}] {x}" for x in f]
+            ev = e
+        ev = f"{REPETICIONES}/{REPETICIONES} repeticiones · " + ev if not fallas else ev
         estado = "cumple" if not fallas else "FALLA"
         if c["id"].startswith(("C3", "C4", "C6")) and not fallas:
             estado = "control probado"
         malos += bool(fallas)
         filas_md.append(f"| {c['id']} | {c['desc']} | **{estado}** | {ev}{' — ' + ' | '.join(fallas) if fallas else ''} |")
+    fallas, ev = caso_url_invalida()
+    malos += bool(fallas)
+    filas_md.append(f"| C9_url_invalida | Sin internet / URL inválida con el lector real: ok=false y se detiene | **{'control probado' if not fallas else 'FALLA'}** | {ev}{' — ' + ' | '.join(fallas) if fallas else ''} |")
     ahora = dt.datetime.now().astimezone().isoformat(timespec="seconds")
     md = ["# Reporte de pruebas (unidad 06)", "", f"Ejecutado: {ahora}  ", "Entorno: fixtures aislados en directorio temporal; sin red, sin Gmail, sin tocar `historial.xlsx` real.", "",
           "| Caso | Qué prueba | Estado | Evidencia |", "|---|---|---|---|", *filas_md, "",
-          f"**Resumen:** {len(CASOS) - malos}/{len(CASOS)} casos con el resultado esperado.", "",
+          f"**Resumen:** {len(CASOS) + 1 - malos}/{len(CASOS) + 1} casos (cada uno repetido {REPETICIONES} veces, salvo C9) con el resultado esperado.", "",
           "> Estos casos prueban el código determinista (lectura interpretada, validación, Excel, adjunto, estado). "
           "NO prueban el envío real por Gmail ni la lectura en vivo un día feriado: ver `p2a/06_validacion.md`.", ""]
     (RAIZ / "evals/reporte.md").write_text("\n".join(md), encoding="utf-8")

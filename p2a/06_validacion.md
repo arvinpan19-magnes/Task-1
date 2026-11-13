@@ -3,7 +3,9 @@
 **Estado:** prototipo (parcial). Resultados esperados escritos antes de ejecutar en `evals/casos/casos.json`. Ejecutor: `python3 evals/ejecutar.py` → `evals/reporte.md`.
 
 ## Resultado de la ejecución (2026-11-13)
-**16/16 casos con el resultado esperado** (ver `evals/reporte.md`). Cubren: caso normal; ejecución repetida el mismo día (sin duplicar, bytes idénticos); dólar/UF/cobre fuera de rango; dato faltante; formato ilegible; etiqueta cambiada; home≠diarios; falla de lectura + aviso de falla preparado; fin de semana; feriado; fecha futura; xlsx liviano; destinatario único.
+**17/17 casos con el resultado esperado**, los críticos repetidos 3 veces (ver `evals/reporte.md`). Cubren: caso normal; ejecución repetida el mismo día (sin duplicar, bytes idénticos); dólar/UF/cobre fuera de rango; dato faltante; formato ilegible; etiqueta cambiada; home≠diarios; falla de lectura + aviso de falla preparado; URL inválida con el lector real (conexión rechazada); fin de semana; feriado; fecha futura; xlsx liviano; destinatario único.
+
+**Verificación contra la fuente real (2026-11-13):** los 3 valores que leyó el código coinciden con lo que muestra la página abierta en un navegador (captura: `evals/evidencia/indicadores_diarios_2026-11-13.png`): UF 41.322,93 · dólar observado 992,48 · libra de cobre 6,30 · fecha de referencia «13 Nov 2026» (el mismo día; el home muestra los mismos valores). Unidades: dólar en CLP por USD, UF en CLP, cobre en USD por libra. Mientras no se elija otra fecha, la fecha que muestra la página es la del valor: el código la guarda (`fecha_fuente`) y la compara con hoy.
 
 Además, una **ejecución real** en vivo el 2026-11-13: lectura de ambas páginas, validación, fila registrada, adjunto verificado.
 
